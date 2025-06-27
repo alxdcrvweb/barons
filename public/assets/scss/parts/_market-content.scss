@@ -1,0 +1,287 @@
+//=============================================================================================//
+// Market content
+//=============================================================================================//
+
+.market-content{
+    width: 100%;
+    background: rgba($color: #2b1f15, $alpha: .66);
+    border-radius: 5px;
+    padding: 40px;
+
+    @media (max-width: $SIZE_PC_FULL) {
+        padding: 20px;
+    }
+
+    @media (max-width: $SIZE_MOBILE_FULL) {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    &-title{
+        width: 100%;
+        @include font('Albertus', 700, 32px, 32px, #deac4b, 1);
+        text-transform: uppercase;
+        text-align: center;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            font-size: 22px;
+            line-height: 22px;
+        }
+
+        @media (max-width: $SIZE_PC_NORMAL) {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+
+    &-table{
+        width: 100%;
+        margin-top: 40px;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            margin-top: 20px;
+        }
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            width: calc( 100% + 10px );
+            margin: -5px;
+            margin-top: 15px;
+        }
+    }
+
+    &-col{
+        width: calc( ( 100% - 230px ) / 6 );
+        
+        @media (max-width: $SIZE_PC_FULL) {
+            width: calc( ( 100% - 180px ) / 6 );
+        }
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            width: calc( ( 100% - (10px * 6) ) / 6 );
+            padding: 10px;
+            background: rgba($color: #2b1f15, $alpha: .66);
+            margin: 5px;
+            border-radius: 5px;
+            align-self: stretch;
+        }
+
+        @media (max-width: $SIZE_MOBILE_MIDDLE) {
+            width: calc( ( 100% - (10px * 3) ) / 3 );
+        }
+
+        @media (max-width: $SIZE_MOBILE_SMALL) {
+            width: calc( ( 100% - (10px * 2) ) / 2 );
+        }
+
+        &:first-child{
+            width: 230px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                width: 180px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                width: 100%;
+                order: 10;
+
+                .market-content-col-info{
+                    display: none;
+                }
+
+                .market-content-col-input{
+                    margin-top: 0px;
+                }
+
+            }
+        }
+
+        &:not(:last-child)
+        {
+            .market-content-col-info{
+                border-right: 2px solid rgba($color: #594f41, $alpha: 1);
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    border-right: none;
+                }
+            }
+        }
+
+        &-icon{
+            width: 100%;
+            height: 120px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                height: 70px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                margin-top: 10px;
+            }
+
+            img{
+                width: 100px;
+                height: auto;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    width: 50px;
+                }
+            }
+        }
+
+        &-treasury, &-warehous{
+            width: 100%;
+            height: 54px;
+            @include font('Albertus', 700, 18px, 18px, #d2b55b);
+            text-transform: uppercase;
+            text-align: center;
+            background: rgba($color: #2b1f15, $alpha: .96);
+            border-top: 2px solid rgba($color: #4e422d, $alpha: .7);
+            border-bottom: 2px solid rgba($color: #4e422d, $alpha: .7);
+            box-shadow: inset 0px 0px 20px 0px rgba($color: #000000, $alpha: .4);
+
+            @media (max-width: $SIZE_PC_FULL) {
+                height: 42px;
+                font-size: 14px;
+                line-height: 14px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                border: 2px solid rgba($color: #4e422d, $alpha: .7);
+                border-radius: 5px !important;
+                font-size: 12px;
+                line-height: 12px;
+                padding-top: 3px;
+
+                &:after{
+                    content: attr(data-title);
+                    display: block;
+                    width: 100%;
+                    @include font('Intro', 400, 8px, 8px, #b9a49a);
+                    margin-top: -10px;
+                }
+            }
+
+            span{
+                width: 100%;
+            }
+        }
+
+        &-warehous{
+            margin-top: 5px;
+            background: rgba($color: #2b1f15, $alpha: .66);
+        }
+
+        &:first-child &-treasury,
+        &:first-child &-warehous{
+            border-left: 2px solid rgba($color: #4e422d, $alpha: .7);
+            border-radius: 5px 0px 0px 5px;
+            padding-left: 15px;
+            text-align: left;
+            color: rgb(255, 218, 151);
+        }
+
+        &:last-child &-treasury,
+        &:last-child &-warehous{
+            border-right: 2px solid rgba($color: #4e422d, $alpha: .7);
+            border-radius: 0px 5px 5px 0px;
+        }
+
+        &-input{
+            width: 100%;
+            margin-top: 20px;
+            
+            input{
+                display: block;
+                width: calc( 100% - 40px );
+                height: 50px;
+                @include font('Albertus', 700, 18px, 18px, #d2b55b);
+                text-align: center;
+                background: rgba($color: #2b1f15, $alpha: .66);
+                border: 2px solid rgba($color: #4e422d, $alpha: .7);
+                box-shadow: inset 0px 0px 20px 0px rgba($color: #000000, $alpha: .4);
+                border-radius: 5px;
+                margin: 0 auto;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    width: calc( 100% - 20px );
+                    height: 40px;
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    width: 100%;
+                    height: 36px;
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+
+            .color-button{
+                width: calc( 100% - 40px );
+                margin: 0 auto;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    width: calc( 100% - 20px );
+                    height: 40px;
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    width: 200px;
+                }
+            }
+
+            &-info{
+                width: 100%;
+                @include font('Albertus', 700, 18px, 18px, #fff);
+                text-align: center;
+                text-transform: uppercase;
+                margin-top: 10px;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+
+                span{
+                    display: block;
+                    width: 100%;
+                    font-size: 10px;
+                    line-height: 10px;
+                    color: #d2b55b;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    &-buttons{
+        width: calc( 100% + 10px );
+        margin: -5px;
+        margin-top: 35px;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            margin-top: 15px;
+        }
+
+        .color-button{
+            width: 260px;
+            height: 60px;
+            margin: 5px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                width: 220px;
+                height: 50px;
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+    }
+}

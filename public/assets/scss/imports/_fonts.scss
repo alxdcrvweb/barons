@@ -1,0 +1,64 @@
+//=============================================================================================//
+// Fonts
+//=============================================================================================//
+
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+//---------------------------------------------------------------------------------------------//
+// Albertus
+//---------------------------------------------------------------------------------------------//
+
+@font-face { 
+    font-family: 'Albertus';
+    src:    url('../fonts/albertus/AlbertusBold-Regular.woff2') format('woff2'),
+            url('../fonts/albertus/AlbertusBold-Regular.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Albertus';
+    src:    url('../fonts/albertus/AlbertusExtraBold-Regular.woff2') format('woff2'),
+            url('../fonts/albertus/AlbertusExtraBold-Regular.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+//---------------------------------------------------------------------------------------------//
+// Intro
+//---------------------------------------------------------------------------------------------//
+
+@font-face {
+    font-family: 'Intro';
+    src: url('../fonts/intro/Intro-Regular.eot');
+    src: local('☺'),
+        url('../fonts/intro/Intro-Regular.woff') format('woff'),
+        url('../fonts/intro/Intro-Regular.ttf') format('truetype'),
+        url('../fonts/intro/Intro-Regular.svg') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Intro';
+    src: url('../fonts/intro/Intro-Bold.eot');
+    src: local('☺'),
+        url('../fonts/intro/Intro-Bold.woff') format('woff'),
+        url('../fonts/intro/Intro-Bold.ttf') format('truetype'),
+        url('../fonts/intro/Intro-Bold.svg') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+//---------------------------------------------------------------------------------------------//
+// Standrag
+//---------------------------------------------------------------------------------------------//
+
+@font-face {
+    font-family: 'Standrag';
+    src: url('../fonts/standrag/standrag.woff');
+    font-weight: 400;
+    font-style: normal;
+}

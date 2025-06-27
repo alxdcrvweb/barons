@@ -1,0 +1,958 @@
+//=============================================================================================//
+// War content
+//=============================================================================================//
+
+.war-content{
+    width: 100%;
+
+    @media (max-width: $SIZE_MOBILE_FULL) {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    &__kingdoms{
+        width: 100%;
+        background: rgba($color: #2b1f15, $alpha: .66);
+        border-radius: 5px;
+
+        &-title{
+            width: 100%;
+            background: rgba($color: #2b1f15, $alpha: .66);
+            border-radius: 5px;
+            height: 90px;
+            padding-right: 60px;
+            padding-left: 20px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                height: 70px;
+            }
+
+            @media (max-width: $SIZE_PC_NORMAL) {
+                height: 50px;
+                padding-right: 40px;
+                padding-left: 10px;
+            }
+
+            &-col{
+                width: calc( ( 100% - 300px ) / 6 );
+                height: 100%;
+                padding: 0px 20px;
+                @include font('Albertus', 700, 18px, 18px, #fff);
+                text-transform: uppercase;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    @include font('Albertus', 700, 16px, 16px, #fff);
+                    width: calc( ( 100% - 180px ) / 6 );
+                }
+
+                @media (max-width: $SIZE_PC_NORMAL) {
+                    @include font('Albertus', 700, 14px, 14px, #fff);
+                    width: calc( ( 100% - 150px ) / 6 );
+                    padding: 0px 10px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    display: none;
+                }
+
+                &:first-child{
+                    width: 300px;
+                    font-size: 32px;
+                    line-height: 32px;
+                    color: #deac4b;
+
+                    @media (max-width: $SIZE_PC_FULL) {
+                        width: 180px;
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+
+                    @media (max-width: $SIZE_PC_NORMAL) {
+                        width: 150px;
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
+
+                    @media (max-width: $SIZE_MOBILE_FULL) {
+                        width: 100%;
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        &-table{
+            width: 100%;
+            padding: 20px;
+
+            @media (max-width: $SIZE_PC_NORMAL) {
+                padding: 10px;
+            }
+
+            .swiper{
+                width: 100%;
+                height: calc(42px * 4);
+
+                @media (max-width: $SIZE_PC_NORMAL) {
+                    height: calc(36px * 4);
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    height: calc(100px * 4);
+                }
+
+                @media (max-width: $SIZE_MOBILE_SMALL) {
+                    height: calc(130px * 2);
+                }
+                
+                &-slide{
+                    width: 100%;
+                    padding-right: 40px;
+
+                    @media (max-width: $SIZE_PC_NORMAL) {
+                        padding-right: 30px;
+                    }
+                }
+            }
+
+            &-line{
+                width: 100%;
+                height: 100%;    
+            }
+
+            .swiper-slide:nth-child(odd) .war-content__kingdoms-table-line{
+                background: rgba($color: #847e57, $alpha: .3);
+                border: 1px solid rgba($color: #847e57, $alpha: .3);
+                border-radius: 5px;
+            }
+
+            &-col{
+                width: calc( ( 100% - 300px ) / 6 );
+                height: 100%;
+                padding: 0px 20px;
+                @include font('Albertus', 700, 16px, 16px, #fff);
+                text-transform: uppercase;
+                text-align: center;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    width: calc( ( 100% - 180px ) / 6 );
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+
+                @media (max-width: $SIZE_PC_NORMAL) {
+                    width: calc( ( 100% - 150px ) / 6 );
+                    font-size: 12px;
+                    line-height: 12px;
+                    padding: 0px 10px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    height: calc( 100% / 3 );
+                    width: calc(100% / 3);
+                    justify-content: flex-start;
+                    text-align: left;
+                    font-size: 10px;
+                    line-height: 10px;
+
+                    &:before{
+                        content: attr(data-name);
+                        display: block;
+                        width: 100%;
+                        @include font('Intro', 400, 10px, 10px, #b9a49a);
+                        margin-bottom: -10px;
+                    }
+                }
+
+                @media (max-width: $SIZE_MOBILE_SMALL) {
+                    height: calc( 100% / 4 );
+                    width: calc(100% / 2);
+                }
+
+                &:first-child{
+                    width: 300px;
+                    color: #deac4b;
+
+                    @media (max-width: $SIZE_PC_FULL) {
+                        width: 180px;
+                    }
+
+                    @media (max-width: $SIZE_PC_NORMAL) {
+                        width: 150px;
+                    }
+
+                    @media (max-width: $SIZE_MOBILE_FULL) {
+                        width: 100%;
+                        font-size: 12px;
+                        line-height: 12px;
+
+                        &:before{
+                            display: none;
+                        }
+                    }
+
+                    a{
+                        transition: color .3s ease-in-out;
+                        
+                        &:hover{
+                            color: #e4d8c2;
+                        }
+                    }
+                }
+
+                &:last-child{
+                    @media (max-width: $SIZE_MOBILE_FULL) {
+                        &:before{
+                            display: none;
+                        }
+                    }
+                }
+
+                
+
+                .white-button{
+                    @media (max-width: $SIZE_MOBILE_FULL) {
+                        height: 26px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__kingdom{
+        width: 100%;
+        background: rgba($color: #2b1f15, $alpha: .66);
+        border-radius: 5px;
+        margin-top: 20px;
+        padding: 20px;
+
+        &-info{
+            width: calc( 100% - 720px - 20px );
+
+            @media (max-width: $SIZE_PC_FULL) {
+                width: calc( 100% - 620px - 20px );
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                width: 100%;
+            }
+
+            &-title{
+                width: 100%;
+                height: auto;
+
+                &-text{
+                    width: calc( 100% - 193px - 10px );
+                    @include font('Albertus', 700, 32px, 32px, #deac4b, 1);
+                    text-transform: uppercase;
+
+                    @media (max-width: $SIZE_PC_FULL) {
+                        width: calc( 100% - 153px - 10px );
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+
+                    @media (max-width: $SIZE_PC_NORMAL) {
+                        width: calc( 100% - 100px - 10px );
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
+                }
+
+                &-status{
+                    width: 193px;
+                    height: 43px;
+                    background: url('../images/bg/kingdom_status_bg.png') center left no-repeat;
+                    @include font('Albertus', 700, 22px, 22px, #ffebc4);
+                    text-align: center;
+                    text-transform: uppercase;
+                    transition: filter .3s ease-in-out;
+
+                    @media (max-width: $SIZE_PC_FULL) {
+                        width: 153px;
+                        height: 33px;
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+
+                    @media (max-width: $SIZE_PC_NORMAL) {
+                        width: 100px;
+                        height: 23px;
+                        font-size: 14px;
+                        line-height: 14px;
+                        padding-left: 20px;
+                    }
+
+                    &:hover{
+                        filter: brightness(120%);
+                    }
+                }
+            }
+
+            &-fortress{
+                width: 100%;
+                height: 403px;
+                border-radius: 5px;
+                background: url('../images/kingdoms/1.jpg') center center no-repeat;
+                background-size: cover;
+                margin-top: 10px;
+                position: relative;
+                padding: 20px;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    height: 368px;
+                }
+
+                @media (max-width: $SIZE_PC_NORMAL) {
+                    height: 377px;
+                }
+
+                &-title{
+                    width: 100%;
+                    @include font('Albertus', 700, 32px, 32px, #ffffff);
+                    text-transform: uppercase;
+                    position: relative;
+                    z-index: 3;
+
+                    @media (max-width: $SIZE_PC_FULL) {
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+
+                    @media (max-width: $SIZE_PC_NORMAL) {
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
+                }
+
+                &-change{
+                    width: 100%;
+                    margin-top: 10px;
+                    position: relative;
+                    z-index: 3;
+
+                    @media (max-width: $SIZE_PC_FULL) {
+                        margin-top: 5px;
+                    }
+
+                    a{
+                        display: block;
+                        width: 100px;
+                        padding: 8px 15px 6px;
+                        background-color: #403628;
+                        @include font('Intro', 700, 14px, 14px, #deccb2);
+                        text-transform: uppercase;
+                        text-align: center;
+                        border-radius: 5px;
+                        transition: color .3s ease-in-out, background-color .3s ease-in-out;
+                        
+
+                        @media (max-width: $SIZE_PC_FULL) {
+                            font-size: 12px;
+                            line-height: 12px;
+                            margin-top: 5px;
+                        }
+
+                        &:hover{
+                            background-color: #524635;
+                            color: #fff;
+                        }
+
+                        &:not(:last-child){
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                &-progress{
+                    width: 100%;
+                    margin-top: 20px;
+                    position: relative;
+                    z-index: 3;
+                    @include font('Albertus', 700, 24px, 24px, #ffd46e);
+
+                    @media (max-width: $SIZE_PC_FULL) {
+                        margin-top: 10px;
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+                }
+
+                &-action{
+                    width: calc( 100% - 40px );
+                    position: absolute;
+                    left: 20px;
+                    bottom: 20px;
+                    z-index: 3;
+
+                    &-btn{
+                        width: 170px;
+                        height: 60px;
+                        border-radius: 5px;
+                        box-shadow: inset 0px 0px 20px 0px rgba($color: #000000, $alpha: .7);
+                        @include font('Albertus', 700, 18px, 18px, #ebeae7);
+                        text-transform: uppercase;
+                        text-align: center;
+                        transition: filter .3s ease-in-out;
+                        margin-top: 5px;
+
+                        @media (max-width: $SIZE_PC_FULL) {
+                            width: 120px;
+                            height: 40px;
+                            font-size: 14px;
+                            line-height: 14px;
+                        }
+
+                        @media (max-width: $SIZE_PC_NORMAL) {
+                            width: 80px;
+                            height: 40px;
+                            font-size: 12px;
+                            line-height: 12px;
+                        }
+
+                        &:hover{
+                            filter: brightness(120%);
+                        }
+
+                        &:not(:last-child){
+                            margin-right: 10px;
+
+                            @media (max-width: $SIZE_PC_NORMAL) {
+                                margin-right: 5px;
+                            }
+                        }
+
+                        &.red{
+                            background: #920f0f;
+                        }
+
+                        &.green{
+                            background: #549332;
+                        }
+                    }
+
+                    &-input{
+                        width: 170px;
+                        height: 60px;
+                        border-radius: 5px;
+                        box-shadow: inset 0px 0px 20px 0px rgba($color: #000000, $alpha: .7);
+                        @include font('Albertus', 700, 18px, 18px, #ebeae7);
+                        text-transform: uppercase;
+                        text-align: center;
+                        transition: filter .3s ease-in-out;
+                        margin-top: 5px;
+                        background: #920f0f;
+
+                        @media (max-width: $SIZE_PC_FULL) {
+                            width: 120px;
+                            height: 40px;
+                            font-size: 14px;
+                            line-height: 14px;
+                        }
+
+                        @media (max-width: $SIZE_PC_NORMAL) {
+                            width: 120px;
+                            height: 40px;
+                            font-size: 12px;
+                            line-height: 12px;
+                        }
+
+                        &:hover{
+                            filter: brightness(120%);
+                        }
+
+                        &:not(:last-child){
+                            margin-right: 10px;
+
+                            @media (max-width: $SIZE_PC_NORMAL) {
+                                margin-right: 5px;
+                            }
+                        }
+
+                        input{
+                            width: 50px;
+                            height: 40px;
+                            margin: 0px 8px 0px 8px;
+                            padding: 0px 5px 0px 5px;
+                            display: block;
+                            background: none;
+                            text-align: right;
+                            color: #fff;
+                            border-radius: 3px;
+                            background-color: rgba(0, 0, 0, 0.3);
+                            text-align: center;
+                            transition: background-color .3s ease-in-out;
+                            
+                            @media (max-width: $SIZE_PC_FULL) {
+                                width: 40px;
+                                height: 30px;
+                            }
+
+                            &:focus{
+                                background-color: rgba(0, 0, 0, 0.6);
+                            }
+                        }
+                    }
+                }
+
+                img{
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    object-fit: cover;
+                    object-position: center center;
+                    z-index: 1;
+                    border-radius: 5px;
+    
+                    &.active{
+                        display: block;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+
+        &-cards{
+            width: 720px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                width: 620px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            &-line{
+                width: 100%;
+
+                &:not(:first-child){
+                    margin-top: 20px;
+                }
+            }
+
+            .swiper{
+                width: 100%;
+                padding-bottom: 30px;
+                padding: 5px 5px 30px;
+                margin: -5px;
+
+                &-slide{
+                    border-radius: 5px;
+                    background-color: rgba($color: #2b1f15, $alpha: .66);
+                    cursor: pointer;
+                    transition: background-color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+                    &:hover{
+                        background-color: rgba($color: #2b1f15, $alpha: 1);
+                        box-shadow: 0px 0px 5px #fff;
+                    }
+
+                    &:after{
+                        display: block;
+                        content: '';
+                        position: relative;
+                        z-index: 1;
+                        width: 100%;
+                        padding-bottom: calc( 138% + 34px );
+                        pointer-events: none;
+                    }
+            
+                    .card{
+                        width: calc( 100% - 8px);
+                        position: absolute;
+                        top: 4px;
+                        left: 4px;
+                        z-index: 1;
+                    }
+
+                    .white-button{
+                        width: calc( 100% - 8px);
+                        position: absolute;
+                        bottom: 4px;
+                        left: 4px;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.swiper.v-scrollbar{
+    .swiper-scrollbar{
+        width: 23px;
+        border-radius: 0px;
+        background: none;
+        right: 0px;
+        transform: scale(1, 1.02);
+
+        &:after{
+            content: '';
+            width: calc( 100% - 8px );
+            height: calc( 100% - 8px );
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 4px solid transparent;
+            border-image-source: url('../images/scrolls/border.png');
+            border-image-slice: 4;
+            border-image-repeat: round;
+            background: #323031;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        &-drag{
+            z-index: 2;
+            border-radius: 0px;
+            background:
+                url('../images/scrolls/v_start_bar.png') top 4px center no-repeat,
+                url('../images/scrolls/v_end_bar.png') bottom 4px center no-repeat,
+                url('../images/scrolls/v_middle_bar.png') center center no-repeat,
+                
+                url('../images/scrolls/v_bar.png') center center no-repeat;
+                background-size:
+                    auto auto,
+                    auto auto,
+                    auto auto,
+                    15px calc( 100% - 14px );
+        }
+    }
+}
+
+.swiper.h-scrollbar{
+    .swiper-scrollbar{
+        height: 23px;
+        border-radius: 0px;
+        background: none;
+        bottom: 0px;
+        transform: scale(1.02, 1);
+
+        &:after{
+            content: '';
+            width: calc( 100% - 8px );
+            height: calc( 100% - 8px );
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 4px solid transparent;
+            border-image-source: url('../images/scrolls/border.png');
+            border-image-slice: 4;
+            border-image-repeat: round;
+            background: #323031;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        &-drag{
+            z-index: 2;
+            border-radius: 0px;
+            background:
+                url('../images/scrolls/h_start_bar.png') left 4px center no-repeat,
+                url('../images/scrolls/h_end_bar.png') right 4px center no-repeat,
+                url('../images/scrolls/h_middle_bar.png') center center no-repeat,
+                
+                url('../images/scrolls/h_bar.png') center center no-repeat;
+                background-size:
+                    auto auto,
+                    auto auto,
+                    auto auto,
+                    calc( 100% - 14px ) 15px;
+        }
+    }
+}
+
+.popup-kingdoms{
+    width: 100%;
+
+    &__item{
+        width: 100%;
+
+        &:not(:last-child){
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #c6c2b7;
+        }
+
+        &-info{
+            width: calc( 45% - 10px );
+            height: 320px;
+            border-radius: 5px;
+            position: relative;
+            padding: 20px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                height: 260px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_MIDDLE) {
+                width: 100%;
+            }
+
+            @media (max-width: $SIZE_MOBILE_SMALL) {
+                height: 220px;
+            }
+
+            &-title{
+                width: 100%;
+                @include font('Albertus', 700, 32px, 32px, #ffffff);
+                text-transform: uppercase;
+                position: relative;
+                z-index: 2;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                   font-size: 22px;
+                   line-height: 22px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    font-size: 18px;
+                    line-height: 18px;
+                }
+            }
+
+            &-change{
+                width: 100%;
+                margin-top: 10px;
+                position: relative;
+                z-index: 2;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    margin-top: 5px;
+                }
+
+                a{
+                    display: block;
+                    width: 100px;
+                    padding: 8px 15px 6px;
+                    background-color: #403628;
+                    @include font('Intro', 700, 14px, 14px, #deccb2);
+                    text-transform: uppercase;
+                    text-align: center;
+                    border-radius: 5px;
+                    transition: color .3s ease-in-out, background-color .3s ease-in-out;
+                    
+
+                    @media (max-width: $SIZE_PC_FULL) {
+                        font-size: 12px;
+                        line-height: 12px;
+                        margin-top: 5px;
+                    }
+
+                    &:hover{
+                        background-color: #524635;
+                        color: #fff;
+                    }
+
+                    &:not(:last-child){
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            &-progress{
+                width: 100%;
+                margin-top: 20px;
+                @include font('Albertus', 700, 24px, 24px, #ffd46e);
+                position: relative;
+                z-index: 2;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    margin-top: 10px;
+                    font-size: 18px;
+                    line-height: 18px;
+                }
+            }
+
+            &-bg{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                object-fit: cover;
+                object-position: center center;
+                border-radius: 5px;
+            }
+        }
+
+        &-content{
+            width: calc( 55% - 10px );
+
+            @media (max-width: $SIZE_MOBILE_MIDDLE) {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            &-title{
+                width: 100%;
+                @include font('Albertus', 700, 36px, 36px, #492b26);
+                text-transform: uppercase;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    font-size: 22px;
+                    line-height: 22px;
+                }
+ 
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                     font-size: 18px;
+                     line-height: 18px;
+                }
+            }
+
+            &-description{
+                width: 100%;
+                @include font('Intro', 400, 18px, 24px, #423e32);
+                margin-top: 10px;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+
+            &-params{
+                width: 100%;
+                margin-top: 20px;
+    
+                &-line{
+                    width: 100%;
+                    @include font('Intro', 400, 16px, 18px, #492b26);
+                    text-transform: uppercase;
+
+                    @media (max-width: $SIZE_MOBILE_FULL) {
+                        font-size: 14px;
+                        line-height: 18px;
+                    }
+                    
+                    span{
+                        color: #a13928;
+                    }
+
+                    &:not(:last-child){
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
+
+/*
+.kingdom-boost{
+    width: 100%;
+    height: auto;
+
+    &__item{
+        width: calc( ( 100% - 60px ) / 4 );
+        height: 220px;
+        position: relative;
+        margin-bottom: 30px;
+        border: 5px solid #24211d;
+        border-radius: 5px;
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            width: calc( ( 100% - 20px ) / 2 );
+        }
+
+        @media (max-width: $SIZE_MOBILE_SMALL) {
+            width: 100%;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+            object-position: center center;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        &-info{
+            width: 100%;
+            height: auto;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 60px 20px 20px;
+            z-index: 2;
+            background: linear-gradient(
+                to top,
+                #3a332c,
+                rgba(0, 0, 0, 0)
+            );
+            border-radius: 5px;
+        }
+
+        &-name{
+            width: 100%;
+            @include font('Albertus', 700, 20px, 20px, #deac4b);
+            text-transform: uppercase;
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+
+        &-prise{
+            width: 100%;
+            @include font('Intro', 400, 14px, 14px, #d3c6ad);
+            margin-top: 5px;
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                font-size: 12px;
+                line-height: 12px;
+            }
+        }
+
+        .texture-button{
+            margin-bottom: -44px;
+            margin-top: 10px;
+        }
+    }
+}
+*/
+
+.dialog-content{
+    width: 100%;
+    @include font('Philosopher', 400, 18px, 1.4, #604c43);
+    text-align: center;
+    
+    @media (max-width: $SIZE_MOBILE_FULL) {
+        font-size: 16px;
+    }
+
+    p{
+        margin: 0px;
+        padding: 0px;
+
+        &:not(:last-child){
+            margin-bottom: 15px;
+        }
+    }
+
+    &__buttons{
+        width: 100%;
+        margin-top: 15px;
+        
+        .texture-button{
+            width: 100px;
+            margin: 5px;
+        }
+    }
+}

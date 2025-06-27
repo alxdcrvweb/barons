@@ -1,0 +1,544 @@
+//=============================================================================================//
+// Header
+//=============================================================================================//
+
+.header {
+    width: 100%;
+    height: 154px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: url('../images/bg/top_nav_bg.jpg') center center repeat-x;
+    background-size: auto 100%;
+    padding: 20px 0px 0px;
+
+    @media (max-width: $SIZE_PC_FULL) {
+        height: 100px;
+        padding: 11px 0px 0px;
+    }
+
+    @media (max-width: $SIZE_PC_MIDDLE) {
+        margin-top: -22px;
+    }
+
+    @media (max-width: $SIZE_MOBILE_FULL) {
+        height: 80px;
+        margin-top: -17px;
+        padding: 18px 0px 4px;
+    }
+
+    @media (max-width: $SIZE_MOBILE_MIDDLE) {
+        height: 70px;
+        margin-top: -15px;
+        padding: 16px 0px 4px;
+    }
+
+    &__content {
+        width: calc(100% - ( 513px * 2 ) - ( 60px * 2 ) );
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            width: calc( 100% - ( 320px * 2 ) - ( 40px * 2 ) );
+        }
+
+        @media (max-width: $SIZE_PC_NORMAL) {
+            width: calc( 100% - ( 270px * 2 ) - ( 20px * 2 ) );
+        }
+
+        @media (max-width: $SIZE_PC_MIDDLE) {
+            width: calc( 100% - 40px );
+        }
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            width: calc( 100% - 20px );
+        }
+    }
+
+    &__claim{
+        width: 80px !important;
+        height: 47px !important;
+        margin-right: 10px;
+        border-radius: 10px;
+        padding-top: 2px;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            width: 75px !important;
+            margin-right: 0px;
+        }
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            width: 70px !important;
+            height: 40px !important;
+            position: absolute !important;
+            top: calc(100% + 30px);
+            left: 0;
+        }
+    }
+
+    &__resources {
+        width: calc( 100% - 345px - 90px );
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            width: calc( 100% - 260px - 75px );  
+        }
+
+        @media (max-width: $SIZE_PC_MIDDLE) {
+            max-width: 700px;
+        }
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__resource {
+        width: auto;
+        cursor: pointer;
+        margin-right: auto;
+        position: relative;
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            width: calc( 100% / 6 );
+            height: 100%;
+            display: block;
+        }
+
+        &-icon {
+            width: 67px;
+            height: 67px;
+            border-radius: 50%;
+            box-shadow: 0 5px 0 rgba($color: #000, $alpha: .3), 0 0 20px rgba($color: #fff, $alpha: .1);
+            transition: filter .3s ease-in-out, box-shadow .3s ease-in-out;
+            position: relative;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                width: 42px;
+                height: 42px;
+            }
+
+            @media (max-width: $SIZE_PC_NORMAL) {
+                width: 32px;
+                height: 32px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                width: 26px;
+                height: 26px;
+                margin: 4px auto 0px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &.low:before, &.high:before{
+                content: '';
+                display: block;
+                width: 28px;
+                height: 28px;
+                border-radius: 28px;
+                overflow: hidden;
+                position: absolute;
+                z-index: 2;
+                left: 0px;
+                bottom: 0px;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 18px;
+                    left: -1px;
+                    bottom: -1px;
+                }
+
+                @media (max-width: $SIZE_PC_NORMAL) {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 16px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_FULL) {
+                    left: calc(50% - 17px);
+                    bottom: -2px;
+                }
+
+                @media (max-width: $SIZE_MOBILE_MIDDLE) {
+                    width: 14px;
+                    height: 14px;
+                    bottom: -1px;
+                }
+            }
+
+            &.low:before{
+                background: url('../images/resources/low_icon.png') center center no-repeat;
+                background-size: 100% 100%;
+            }
+
+            &.high:before{
+                background: url('../images/resources/high_icon.png') center center no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+
+        &:hover &-icon {
+            filter: brightness(150%);
+            box-shadow: 0 8px 5px rgba($color: #000, $alpha: .5), 0 0 20px rgba($color: #fff, $alpha: .1);
+        }
+
+        &-info {
+            width: auto;
+            margin-left: 15px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                margin-left: 10px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                width: 100%;
+                margin-left: 0px;
+            }
+        }
+
+        &-count {
+            @include font('Albertus', 700, 16px, 16px, #fff);
+
+            @media (max-width: $SIZE_PC_FULL) {
+                font-size: 16px;
+                line-height: 16px;
+            }
+
+            @media (max-width: $SIZE_PC_NORMAL) {
+                font-size: 14px;
+                line-height: 14px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                width: 100%;
+                font-size: 10px;
+                line-height: 10px;
+                text-align: center;
+                margin-top: 5px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_MIDDLE) {
+                @include font('Intro', 400, 8px, 8px, #e0d1ca);
+                margin-top: 4px;
+            }
+        }
+
+        &-progress {
+            @include font('Intro', 400, 14px, 14px, #f9da6e);
+            margin-top: 5px;
+            transition: color .3s ease-in-out;
+            position: relative;
+
+            span{
+                position: relative;
+            }
+
+            @media (max-width: $SIZE_PC_FULL) {
+                font-size: 12px;
+                line-height: 12px;
+                margin-top: 3px;
+            }
+
+            @media (max-width: $SIZE_MOBILE_FULL) {
+                width: 45px;
+                height: 18px;
+                text-align: center;
+                font-size: 10px;
+                line-height: 10px;
+                font-weight: 700;
+                background: url('../images/bg/top_nav_progress_bg.png') center center repeat-x;
+                background-size: 100% 100%;
+                padding-top: 5px;
+                argin-top: 0px;
+                position: absolute;
+                top: calc(100% - 12px);
+                left: calc( ( 100% - 45px ) / 2 );
+            }
+
+            @media (max-width: $SIZE_MOBILE_MIDDLE) {
+                width: 38px;
+                height: 16px;
+                font-size: 8px;
+                line-height: 8px;
+                left: calc( ( 100% - 38px ) / 2 );
+                top: calc(100% - 10px);
+            }
+
+            &:hover{
+                color: #ebd896;
+            }
+
+            .tooltip{
+                padding: 8px 10px;
+                background: #18110e;
+                border-radius: 5px;
+                position: absolute;
+                top: calc( 100% + 10px );
+                left: 50%;
+                transform: translateX(-50%);
+                pointer-events: none;
+                text-align: center;
+                border: 1px solid #3f302a;
+                @include font('Intro', 400, 12px, 12px, #e9dfbc);
+                transition: opacity .3s ease-in-out;
+                opacity: 0;
+
+                &:after{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-bottom: 6px solid #18110e;
+                    position: absolute;
+                    top: -5px;
+                    left: calc(50% - 5px);
+                    z-index: 2;
+                }
+                &:before{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-bottom: 6px solid #3f302a;
+                    position: absolute;
+                    top: -6px;
+                    left: calc(50% - 5px);
+                    z-index: 1;
+                }
+            }
+
+            span:hover .tooltip{
+                opacity: 1;
+            }
+        }
+    }
+
+    &__user{
+        width: auto;
+        height: 115px;
+        margin-left: auto;
+        position: relative;
+        z-index: 1;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            height: 80px;
+        }
+
+        @media (max-width: $SIZE_PC_MIDDLE) {
+            height: 60px;
+        }
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            position: absolute;
+            top: calc(100% + 20px);
+            right: 0px;
+        }
+
+        &-avatar{
+            width: 115px;
+            height: 115px;
+            position: relative;
+            z-index: 2;
+            border-radius: 50%;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                width: 80px;
+                height: 80px;
+            }
+
+            @media (max-width: $SIZE_PC_MIDDLE) {
+                width: 60px;
+                height: 60px;
+            }
+
+            &:after{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 2;
+                background: url('../images/bg/avatar_border_bg.png') center center repeat-x;
+                background-size: 100% 100%;
+                pointer-events: none;
+            }
+
+            &-img{
+                width: calc( 100% - 20px );
+                height: calc( 100% - 20px );
+                position: relative;
+                z-index: 1;
+                border-radius: 50%;
+                overflow: hidden;
+                background: #1b110e;
+                transition: filter .3s ease-in-out;
+
+                @media (max-width: $SIZE_PC_MIDDLE) {
+                    width: calc( 100% - 10px );
+                    height: calc( 100% - 10px );
+                }
+
+                &:hover{
+                    filter: brightness(130%);
+                }
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    object-fit: cover;
+                    transition: transform .3s ease-in-out;
+                }
+
+                &:hover img{
+                    transform: scale(1.1);
+                }
+            }
+
+            &-notice,
+            &-settings{
+                width: 32px;
+                height: 32px;
+                display: block;
+                position: absolute;
+                z-index: 3;
+                transition: filter .3s ease-in-out;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                @media (max-width: $SIZE_PC_MIDDLE) {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                &:hover{
+                    filter: brightness(150%);
+                }
+            }
+
+            &-notice{
+                top: 12px;
+                right: 5px;
+                background: url('../images/bg/avatar_notice.png') center center;
+                background-size: 100% 100%;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    top: 6px;
+                    right: 3px;
+                }
+
+                @media (max-width: $SIZE_PC_MIDDLE) {
+                    top: 3px;
+                    right: 2px;
+                }
+            }
+
+            &-settings{
+                bottom: 12px;
+                right: 5px;
+                background: url('../images/bg/avatar_settings.png') center center;
+                background-size: 100% 100%;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    bottom: 6px;
+                    right: 3px;
+                }
+
+                @media (max-width: $SIZE_PC_MIDDLE) {
+                    bottom: 3px;
+                    right: 2px;
+                }
+            }
+        }
+
+        &-info{
+            width: auto;
+            max-width: 280px;
+            height: 100px;
+            position: relative;
+            z-index: 1;
+            background: url('../images/bg/user_info_bg.png') left center repeat-x;
+            background-size: auto 100%;
+            margin-right: -50px;
+            padding: 0px 60px 0px 40px;
+            border-radius: 0px 100px 100px 0px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                max-width: 230px;
+                height: 70px;
+                padding: 0px 55px 0px 27px;
+            }
+
+            @media (max-width: $SIZE_PC_MIDDLE) {
+                height: 60px;
+            }
+
+            &-status{
+                margin-top: 33px;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    margin-top: 24px;
+                }
+
+                @media (max-width: $SIZE_PC_MIDDLE) {
+                    margin-top: 19px;
+                }
+
+                & > *:not(:last-child){
+                    padding-right: 15px;
+                }
+            }
+
+            &-kingdom{
+                @include font('Albertus', 700, 13px, 13px, #c00a0a);
+                text-transform: uppercase;
+                text-shadow: 0 1px 0 #fff, 0 1px 4px #fff;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    font-size: 10px;
+                    line-height: 10px;
+                }
+            }
+            &-tax{
+                @include font('Albertus', 700, 13px, 13px, #5c38d4);
+                text-transform: uppercase;
+                text-shadow: 0 1px 0 #fff, 0 1px 4px #fff;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    font-size: 10px;
+                    line-height: 10px;
+                }
+            }
+
+            &-name{
+                width: 100%;
+                @include font('Albertus', 700, 16px, 16px, #2d2b25, 1);
+                text-transform: uppercase;
+                text-shadow: 0 1px 0 #fff, 0 1px 4px #fff;
+                margin-top: 5px;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    @include font('Albertus', 700, 12px, 12px, #2d2b25, 1);
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+    
+}

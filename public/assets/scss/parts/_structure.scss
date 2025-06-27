@@ -1,0 +1,137 @@
+//=============================================================================================//
+// Structure
+//=============================================================================================//
+
+.wrapper{
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    overflow-x: hidden;
+    padding: 210px 0px 220px;
+
+    &--main{
+        background: url('../images/bg/main_bg.jpg') top center repeat-x;
+        background-size: auto 100%;
+    }
+
+    &--war{
+        background: url('../images/bg/war_bg.jpg') top center repeat-x;
+        background-size: auto 100%;
+    }
+
+    &--craft{
+        background: url('../images/bg/craft_bg.jpg') top center repeat-x;
+        background-size: cover;
+    }
+
+    &--market{
+        background: url('../images/bg/market_bg.jpg') top center repeat-x;
+        background-size: cover;
+    }
+
+    &--land{
+        background: url('../images/bg/land_bg.jpg') top center repeat-x;
+        background-size: cover;
+    }
+
+    &--chat{
+        background: url('../images/bg/chat_bg.jpg') top center repeat-x;
+        background-size: cover;
+    }
+
+    &--login{
+        background: url('../images/bg/login_bg.jpg') top center repeat-x;
+        background-size: cover;
+        padding: 20px !important;
+    }
+
+    @media (max-width: $SIZE_PC_FULL) {
+        padding: 140px 0px 170px;
+    }
+
+    @media (max-width: $SIZE_PC_NORMAL) {
+        padding: 120px 0px 130px;
+    }
+
+    @media (max-width: $SIZE_PC_MIDDLE) {
+        padding: 95px 0px 95px;
+    }
+
+    @media (max-width: $SIZE_MOBILE_FULL) {
+        padding: 75px 0px 65px;
+    }
+
+    &__video{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            display: none;
+        }
+
+        &-player{
+            height: 100%;
+
+            -webkit-mask-box-image: linear-gradient(
+                to right,
+                transparent 0%,
+                #fff 100px,
+                #fff calc(100% - 100px),
+                transparent 100%
+            );
+        }
+    }
+}
+
+.main{
+    width: 100%;
+    min-height: calc( 100vh - 210px - 220px );
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: $SIZE_PC_FULL) {
+        min-height: calc( 100vh - 140px - 170px );
+    }
+
+    @media (max-width: $SIZE_PC_NORMAL) {
+        min-height: calc( 100vh - 120px - 130px );
+    }
+
+    @media (max-width: $SIZE_PC_MIDDLE) {
+        min-height: calc( 100vh - 95px - 95px );
+    }
+
+    @media (max-width: $SIZE_MOBILE_FULL) {
+        min-height: calc( 100vh - 75px - 65px );
+    }
+
+    &__content{
+        width: calc(100% - ( 513px * 2 ) - ( 60px * 2 ) );
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            width: calc( 100% - ( 320px * 2 ) - ( 40px * 2 ) );
+        }
+
+        @media (max-width: $SIZE_PC_NORMAL) {
+            width: calc( 100% - ( 270px * 2 ) - ( 20px * 2 ) );
+        }
+
+        @media (max-width: $SIZE_PC_MIDDLE) {
+            width: calc( 100% - 40px );
+        }
+
+        @media (max-width: $SIZE_MOBILE_FULL) {
+            width: calc( 100% - 20px );
+        }
+    }
+}

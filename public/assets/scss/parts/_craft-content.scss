@@ -1,0 +1,278 @@
+//=============================================================================================//
+// Craft content
+//=============================================================================================//
+
+.craft-content{
+    width: 100%;
+
+    @media (max-width: $SIZE_MOBILE_FULL) {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    &__cards{
+        width: calc( 100% - 80px );
+        position: relative;
+        margin: 0 auto;
+
+        .swiper{
+            position: relative;
+            padding: 10px;
+    
+            &-slide{
+                border-radius: 8px;
+                border: 3px solid #7a736d;
+                background-color: rgba(122, 115, 109, 0.3);
+                cursor: pointer;
+                transition: border .3s ease-in-out, box-shadow .3s ease-in-out;
+        
+                &:hover{
+                    border: 3px solid #afa8a2;
+                    box-shadow: 0 0 10px 1px #afa8a2;
+                }
+    
+                &:after{
+                    display: block;
+                    content: '';
+                    position: relative;
+                    z-index: 1;
+                    width: 100%;
+                    padding-bottom: 138%;
+                    pointer-events: none;
+                }
+        
+                .card{
+                    width: calc( 100% - 16px );
+                    position: absolute;
+                    top: 7px;
+                    left: 8px;
+                }
+            }
+        }
+
+        .slider-arrow_prev{
+            display: block;
+            width: 53px;
+            height: 64px;
+            background: url('../images/arrow_left.png') center center no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: calc( ( 100% - 53px ) / 2 );
+            left: -64px;
+            cursor: pointer;
+            transition: filter .3s ease-in-out;
+    
+            @media (max-width: $SIZE_PC_FULL) {
+                width: 40px;
+                height: 48px;
+                top: calc( ( 100% - 40px ) / 2 );
+                left: -48px;
+            }
+    
+            &:hover{
+                filter: brightness(120%);
+            }
+        }
+    
+        .slider-arrow_next{
+            display: block;
+            width: 53px;
+            height: 64px;
+            background: url('../images/arrow_right.png') center center no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: calc( ( 100% - 53px ) / 2 );
+            right: -64px;
+            cursor: pointer;
+            transition: filter .3s ease-in-out;
+    
+            @media (max-width: $SIZE_PC_FULL) {
+                width: 40px;
+                height: 48px;
+                top: calc( ( 100% - 40px ) / 2 );
+                right: -48px;
+            }
+    
+            &:hover{
+                filter: brightness(120%);
+            }
+        }
+    }
+
+    &__info{
+        width: 100%;
+        background: rgba($color: #2b1f15, $alpha: .66);
+        border-radius: 5px;
+        margin-top: 20px;
+        padding: 20px;
+
+        &-stroke{
+            width: calc( 50% - 10px );
+
+            @media (max-width: $SIZE_MOBILE_MIDDLE) {
+                width: 100%;
+            }
+
+            &-title{
+                width: 100%;
+                @include font('Albertus', 700, 32px, 32px, #deac4b, 1);
+                text-transform: uppercase;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    font-size: 18px;
+                    line-height: 18px;
+                }
+
+                @media (max-width: $SIZE_PC_NORMAL) {
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+            }
+
+            &-subtitle{
+                width: 100%;
+                @include font('Albertus', 700, 26px, 26px, #fff);
+                text-transform: uppercase;
+                margin-top: 10px;
+
+                @media (max-width: $SIZE_PC_FULL) {
+                    font-size: 16px;
+                    line-height: 16px;
+                }
+
+                @media (max-width: $SIZE_PC_NORMAL) {
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+            }
+
+            &-content{
+                width: 100%;
+                margin-top: 20px;
+
+                .swiper{
+                    width: 100%;
+                    height: 286px;
+
+                    @media (max-width: $SIZE_MOBILE_FULL) {
+                        height: 210px;
+                    }
+                    
+                    &-slide {
+                        height: auto;
+                        padding-right: 30px;
+                    }
+                }
+
+                &-item{
+                    width: 100%;
+                    padding: 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: filter .3s ease-in-out;
+
+                    &:hover{
+                        filter: brightness(110%);
+                    }
+
+                    @media (max-width: $SIZE_MOBILE_FULL) {
+                        padding: 10px;
+                    }
+
+                    &:not(:first-child){
+                        margin-top: 10px;
+
+                        @media (max-width: $SIZE_MOBILE_FULL) {
+                            margin-top: 5px;
+                        }
+                    }
+
+                    &.yellow{
+                        background-color: rgba($color: #847e57, $alpha: .8);
+                        border: 1px solid rgba($color: #847e57, $alpha: 1);
+                    }
+
+                    &.red{
+                        background-color: rgba($color: #845757, $alpha: .8);
+                        border: 1px solid rgba($color: #845757, $alpha: 1);
+                    }
+
+                    &.green{
+                        background-color: rgba($color: #57846d, $alpha: .8);
+                        border: 1px solid rgba($color: #57846d, $alpha: 1);
+                    }
+
+                    p{
+                        padding: 0px;
+                        margin: 0px;
+                        font-size: 16px;
+                        line-height: 16px;
+                        text-transform: uppercase;
+
+                        @media (max-width: $SIZE_MOBILE_FULL) {
+                            font-size: 14px;
+                            line-height: 14px;
+                        }
+                        
+                        span{
+                            color: #deac4b;
+                        }
+
+                        &.small{
+                            font-size: 12px;
+                            line-height: 12px;
+
+                            @media (max-width: $SIZE_MOBILE_FULL) {
+                                font-size: 10px;
+                                line-height: 10px;
+                            }
+
+                            span{
+                                color: #e4c68c;
+                            }
+                        }
+
+                        &:not(:first-child){
+                            margin-top: 8px;
+
+                            @media (max-width: $SIZE_MOBILE_FULL) {
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-img{
+            width: calc( 50% - 10px );
+            min-height: 200px;
+            align-self: stretch;
+            background: url('../images/bg/craft_img_bg.jpg') center center no-repeat;
+            background-size: cover;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+
+            img{
+                display: none;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                object-fit: cover;
+                object-position: center center;
+                z-index: 1;
+
+                &.active{
+                    display: block;
+                    z-index: 2;
+                }
+            }
+
+            @media (max-width: $SIZE_MOBILE_MIDDLE) {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    }
+}

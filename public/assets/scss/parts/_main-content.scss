@@ -1,0 +1,116 @@
+//=============================================================================================//
+// Main content
+//=============================================================================================//
+
+.main-cards{
+    width: 100%;
+    padding: 40px 40px 0px;
+
+    @media (max-width: $SIZE_PC_FULL) {
+        padding: 20px 40px 0px;
+    }
+
+    .swiper-layout{
+        position: relative;
+
+        &:not(:last-child){
+            margin-bottom: 60px;
+
+            @media (max-width: $SIZE_PC_FULL) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .swiper{
+        position: relative;
+        padding: 10px;
+
+        &-slide{
+            border-radius: 8px;
+            border: 3px solid #b9af5b;
+            background-color: rgba(175, 165, 80, 0.3);
+            cursor: pointer;
+            transition: border .3s ease-in-out, box-shadow .3s ease-in-out;
+    
+            &:hover{
+                border: 3px solid #7aa73d;
+                box-shadow: 0 0 10px 1px #539d18;
+            }
+
+            &:after{
+                display: block;
+                content: '';
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                padding-bottom: 138%;
+                pointer-events: none;
+            }
+    
+            .card{
+                width: calc( 100% - 16px );
+                position: absolute;
+                top: 7px;
+                left: 8px;
+            }
+        }
+    }
+
+    .swiper.main-cards-bottom{
+        .swiper-slide{
+            &:hover{
+                border: 3px solid #a79b3d;
+                box-shadow: 0 0 10px 1px #a79b3d; 
+            }
+        }
+    }
+
+    .slider-arrow_prev{
+        display: block;
+        width: 53px;
+        height: 64px;
+        background: url('../images/arrow_left.png') center center no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        top: calc( ( 100% - 53px ) / 2 );
+        left: -64px;
+        cursor: pointer;
+        transition: filter .3s ease-in-out;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            width: 40px;
+            height: 48px;
+            top: calc( ( 100% - 40px ) / 2 );
+            left: -48px;
+        }
+
+        &:hover{
+            filter: brightness(120%);
+        }
+    }
+
+    .slider-arrow_next{
+        display: block;
+        width: 53px;
+        height: 64px;
+        background: url('../images/arrow_right.png') center center no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        top: calc( ( 100% - 53px ) / 2 );
+        right: -64px;
+        cursor: pointer;
+        transition: filter .3s ease-in-out;
+
+        @media (max-width: $SIZE_PC_FULL) {
+            width: 40px;
+            height: 48px;
+            top: calc( ( 100% - 40px ) / 2 );
+            right: -48px;
+        }
+
+        &:hover{
+            filter: brightness(120%);
+        }
+    }
+}
