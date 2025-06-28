@@ -49,6 +49,7 @@
     "react-sparkle": "^1.0.9",
     "react-test": "^0.17.3",
     "react-toastify": "^8.1.0",
+    "reflect-metadata": "^0.2.2",
     "store": "^2.0.12",
     "swiper": "^8.2.2",
     "typescript-json-serializer": "^3.4.4",
