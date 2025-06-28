@@ -5,13 +5,11 @@
     "dev": "next dev",
     "build": "next build",
     "export": "--EXPORT=true next export",
-    "start": "next start",
-    "test": "cypress open"
+    "start": "next start"
   },
   "dependencies": {
     "@metamask/providers": "^9.0.0",
     "@metamask/safe-event-emitter": "^2.0.0",
-    "@testing-library/react": "^13.3.0",
     "@types/defer-promise": "^1.0.0",
     "@types/jest": "^28.1.5",
     "@types/jquery": "^3.5.14",
